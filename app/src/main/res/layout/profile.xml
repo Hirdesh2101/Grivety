@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="@drawable/drawerheader"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:orientation="vertical"
+        >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/logo1"
+        app:civ_border_width="4dp"
+        app:civ_border_color="#C5BCBC"
+        android:id="@+id/profileimage"
+        />
+
+        <TextView
+            android:id="@+id/profilename"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="45dp"
+            android:textColor="#ffff"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/profilebranch"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="165dp"
+            android:textColor="#ffff"
+            android:textSize="20sp"
+            android:layout_below="@+id/profilename"
+            />
+
+        <TextView
+            android:id="@+id/profileyear"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="165dp"
+            android:textColor="#ffff"
+            android:textSize="20sp"
+            android:layout_below="@+id/profilebranch"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="165dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profileemail"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="#ffff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/ok3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/button_rounded2"
+                android:text="Ok"
+                android:textColor="@color/background"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

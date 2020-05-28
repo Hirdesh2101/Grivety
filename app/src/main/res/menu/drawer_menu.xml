@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/editprofile"
+            android:title=" Edit Profile"
+            android:icon="@drawable/ic_edit_black_24dp"
+            />
+        <item
+            android:id="@+id/signout"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Signout" />
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/feedback"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/contact"
+                android:title="Contact us" />
+        </menu>
+
+
+    </item>
+
+
+</menu>

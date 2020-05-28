@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "577450464547",
+    "firebase_url": "https://grivety.firebaseio.com",
+    "project_id": "grivety",
+    "storage_bucket": "grivety.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577450464547:android:5a25a9782130f5d375a896",
+        "android_client_info": {
+          "package_name": "com.example.grivety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577450464547-f79dgme0n8u3hgvet053oogugsm3ksfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grivety",
+            "certificate_hash": "ba093a8749dfed8346edc5c8a7d86e7d57d0b3c1"
+          }
+        },
+        {
+          "client_id": "577450464547-55m1ptq41mllsa6jqfhclqtsfo3abtmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsSiqGnZhR5yhv_1uKIT82hXMSd51RY_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577450464547-55m1ptq41mllsa6jqfhclqtsfo3abtmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

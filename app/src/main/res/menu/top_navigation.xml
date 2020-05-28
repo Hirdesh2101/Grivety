@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/news2242"
+        android:title="News"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        />
+    <item
+        android:id="@+id/community2242"
+        android:title="Community"
+        android:icon="@drawable/ic_people_outline_black_24dp"
+        />
+    <item
+        android:id="@+id/senior2242"
+        android:title="Seniors"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        />
+    </menu>
