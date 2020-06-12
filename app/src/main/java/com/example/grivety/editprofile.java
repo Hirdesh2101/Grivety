@@ -85,19 +85,58 @@ public class editprofile extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
+        lottieAnimationView.setVisibility(View.VISIBLE);
+        lottieAnimationView.playAnimation();
+        edit.setClickable(false);
+        cancel.setClickable(false);
+        imageView.setClickable(false);
+        imageView5.setAlpha((float) 0.5);
+        imageView4.setAlpha((float) 0.5);
+        imageView3.setAlpha((float) 0.0);
+        textView.setAlpha((float) 0.5);
+        imageView.setAlpha((float) 0.5);
+        edit.setAlpha((float) 0.5);
+        cancel.setAlpha((float) 0.5);
+        fullname.setClickable(false);
+        fullname.setAlpha((float) 0.5);
+        spinner1.setClickable(false);
+        spinner1.setAlpha((float) 0.5);
+        spinner2.setClickable(false);
+        spinner2.setAlpha((float) 0.5);
+
         User = firebaseAuth.getCurrentUser().getUid();
         DocumentReference documentReference = firestore.collection("Users").document(User);
         documentReference.get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if (documentSnapshot.exists()){}
+                        if (documentSnapshot.exists()){
                         String name2 = documentSnapshot.getString("Fullname");
                         String url = documentSnapshot.getString("Image");
                         fullname.setText(name2);
-                        Picasso.get().load(url).fit().centerCrop().into(imageView);
+                        Picasso.get().load(url).fit().placeholder(R.drawable.ic_person_grey_24dp).centerCrop().into(imageView);}
+
+                        imageView.setClickable(true);
+                        edit.setClickable(true);
+                        cancel.setClickable(true);
+                        imageView.setAlpha((float) 1.0);
+                        edit.setAlpha((float) 1.0);
+                        cancel.setAlpha((float) 1.0);
+                        imageView3.setAlpha((float) 1.0);
+                        imageView4.setAlpha((float) 1.0);
+                        imageView5.setAlpha((float) 1.0);
+                        textView.setAlpha((float) 1.0);
+                        fullname.setClickable(true);
+                        fullname.setAlpha((float) 1.0);
+                        spinner1.setClickable(true);
+                        spinner1.setAlpha((float) 1.0);
+                        spinner2.setClickable(true);
+                        spinner2.setAlpha((float) 1.0);
+                        lottieAnimationView.pauseAnimation();
+                        lottieAnimationView.setVisibility(View.INVISIBLE);
                     }
                 });
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,6 +244,7 @@ public class editprofile extends AppCompatActivity {
                         spinner1.setClickable(true);
                         spinner1.setAlpha((float) 1.0);
                         spinner2.setClickable(true);
+                        spinner2.setAlpha((float) 1.0);
                         lottieAnimationView.pauseAnimation();
                         lottieAnimationView.setVisibility(View.INVISIBLE);
                     }
