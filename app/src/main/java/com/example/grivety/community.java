@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.example.grivety.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -48,7 +47,6 @@ public class community extends Fragment {
     String userId;
     private FirebaseAuth firebaseAuth;
     SwipeRefreshLayout layoutnew2;
-    LottieAnimationView lottieAnimationView;
     String User;
     TextView fullname,email;
 
@@ -60,7 +58,6 @@ public class community extends Fragment {
 
         addquestion = v.findViewById(R.id.askquestion);
         button1 = v.findViewById(R.id.questionbutton);
-        lottieAnimationView = v.findViewById(R.id.loadingcommunity);
         recyclerView = v.findViewById(R.id.questionview);
         layoutnew2 = v.findViewById(R.id.swipe3);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -101,8 +98,7 @@ public class community extends Fragment {
                 }
                 if (question.length() > 10 || question.length() == 10) {
 
-                    lottieAnimationView.setVisibility(View.VISIBLE);
-                    lottieAnimationView.playAnimation();
+
                     userId = firebaseAuth.getCurrentUser().getUid();
                     final String namefull2 = fullname.getText().toString();
                     final String namefull3 = email.getText().toString();
@@ -116,8 +112,7 @@ public class community extends Fragment {
                             .add(Users);
                     addquestion.setText("");
 
-                    lottieAnimationView.pauseAnimation();
-                    lottieAnimationView.setVisibility(View.INVISIBLE);
+
                     FragmentTransaction fragment = getFragmentManager().beginTransaction();
                     fragment.detach(community.this);
                     fragment.attach(community.this);
@@ -125,8 +120,6 @@ public class community extends Fragment {
                 }
             }
         });
-        lottieAnimationView.setVisibility(View.VISIBLE);
-        lottieAnimationView.playAnimation();
         CollectionReference documentReference2 = db.collection("Community");
 
         documentReference2.orderBy("Time", Query.Direction.DESCENDING).get()
@@ -140,8 +133,6 @@ public class community extends Fragment {
 
                             ArrayList.add(question);
                         }
-                        lottieAnimationView.pauseAnimation();
-                        lottieAnimationView.setVisibility(View.INVISIBLE);
                         adapter = new communityadapter(getContext(),ArrayList);
                         recyclerView.setAdapter(adapter);
                     }
