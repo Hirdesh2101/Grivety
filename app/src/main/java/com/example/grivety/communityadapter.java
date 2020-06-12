@@ -2,10 +2,12 @@ package com.example.grivety;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
@@ -88,14 +90,17 @@ public class communityadapter extends RecyclerView.Adapter<communityholder> {
             @Override
             public void onClick(View v) {
 
-                holder.show1.setVisibility(View.INVISIBLE);
-
                 final ArrayList<comment2> finalarray = new ArrayList<>();
 
                 String s = holder.commentbox.getText().toString();
                 String s2 = holder.namefull2.getText().toString();
                 String s3 = holder.emailfull2.getText().toString();
 
+                if (TextUtils.isEmpty(s)){
+                    Toast.makeText(mcontext3,"Enter a comment",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                holder.show1.setVisibility(View.INVISIBLE);
                 db = FirebaseFirestore.getInstance();
 
                 DocumentReference doc = db.collection("Comments").document(String.valueOf(System.currentTimeMillis()));
